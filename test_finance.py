@@ -1,4 +1,4 @@
-#
+from finance import create_account, add_transaction, get_account_balance, get_total_balance
 # Creamos el menu
 def main():
     
@@ -29,7 +29,7 @@ def main():
             account_id = int(input("Ingrese el id de la cuenta: "))
             description = input("Ingrese la descripcion de la transaccion: ")
             amount = float(input("Ingrese el monto de la transaccion: "))
-            add_transaction(accounts, account_id, amount)
+            add_transaction(accounts,description, account_id, amount)
             print(f"Transaccion de {amount} realizada en la cuenta {account_id}")
 
         #Consultar saldo de la cuenta
@@ -37,11 +37,14 @@ def main():
             account_id = int(input("Ingrese el id de la cuenta: "))
             balance = get_account_balance(accounts, account_id)
             print(f"El saldo de la cuenta {account_id} es {balance}")
+        
+        
 
         #Consultar saldo total
         elif option == 4:
             total_balance = get_total_balance(accounts)
             print(f"El saldo total de las cuentas es {total_balance}")
+        
         elif option ==  5:
             print("Gracias por usar la calculadora")
             #salimos del ciclo
